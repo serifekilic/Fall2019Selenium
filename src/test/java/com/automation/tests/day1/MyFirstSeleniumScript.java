@@ -12,5 +12,6 @@ public class MyFirstSeleniumScript {
         ChromeDriver driver =new ChromeDriver();
         //open some website
         driver.get("http://google.com");
+        driver.close();
     }
 }
