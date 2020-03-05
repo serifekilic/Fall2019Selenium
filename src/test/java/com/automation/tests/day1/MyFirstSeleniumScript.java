@@ -1,10 +1,12 @@
 package com.automation.tests.day1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyFirstSeleniumScript {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //setup chrome driver
         WebDriverManager.chromedriver().setup();
@@ -12,6 +14,8 @@ public class MyFirstSeleniumScript {
         ChromeDriver driver =new ChromeDriver();
         //open some website
         driver.get("http://google.com");
+
+
         driver.close();
     }
 }
