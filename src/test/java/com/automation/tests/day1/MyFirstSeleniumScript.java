@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyFirstSeleniumScript {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         //setup chrome driver
         WebDriverManager.chromedriver().setup();
