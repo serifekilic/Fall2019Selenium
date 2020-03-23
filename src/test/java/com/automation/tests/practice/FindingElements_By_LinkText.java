@@ -1,4 +1,4 @@
-package com.automation.tests.day1;
+package com.automation.tests.practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

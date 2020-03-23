@@ -1,4 +1,4 @@
-package com.automation.tests.day5;
+package com.automation.tests.day6;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;

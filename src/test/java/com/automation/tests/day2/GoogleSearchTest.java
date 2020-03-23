@@ -28,6 +28,7 @@ public class GoogleSearchTest {
         //Keys.ENTER - perform keyboard click
         //keysToSend - name of the parameter, we don't specify it
         search.sendKeys("Java", Keys.ENTER);
+     //   search.sendKeys("java",Keys.RETURN); //mac te return tusu enter tusudur. ayni sey
        // Thread.sleep(2000);
         // 2000 - 2 seconds
         // 12000 - 12 seconds

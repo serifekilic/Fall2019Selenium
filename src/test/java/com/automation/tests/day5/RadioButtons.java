@@ -21,6 +21,11 @@ public class RadioButtons {
             driver.manage().window().maximize();
             Thread.sleep(2000);
 
+            driver.findElement(By.xpath("//label[text()='Black']/preceding-sibling::input")).click();
+
+
+            BrowserUtils.wait(2);
+            driver.findElement(By.xpath("//label[text()='Blue']/preceding-sibling::input")).click();
             BrowserUtils.wait(2);
             //<input type="radio">
             List<WebElement> radioButtons = driver.findElements(By.tagName("input"));
