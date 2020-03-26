@@ -68,7 +68,7 @@ public class PracticeTest {
         checkBoxes.get(0).click();
 
 
-       Assert.assertTrue(checkBoxes.get(0).isSelected(),"ceheckbox #1 is not selected!");
+       Assert.assertTrue(checkBoxes.get(0).isSelected(),"checkbox #1 is not selected!");
     }
     @BeforeMethod
     public void setup(){

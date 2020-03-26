@@ -28,7 +28,7 @@ public class CheckBoxes {
             if(checkBoxes.get(i).isDisplayed()&&checkBoxes.get(i).isEnabled()&&!checkBoxes.get(i).isSelected()){
                 //if checkbox is not selected,  click on it
                 checkBoxes.get(i).click();//click on the second checkbox
-                System.out.println(i+1+" chcekbox clicked");
+                System.out.println(i+1+" checkbox clicked");
             }else{
                 System.out.println(i+1+" checkbox was not clicked");
             }

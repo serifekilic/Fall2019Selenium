@@ -96,8 +96,8 @@ public class CalendarEventsPageTests {
         Assert.assertEquals(actualTime,expectedTime);
 
     }
-    @AfterMethod
-    public void teardown(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void teardown(){
+//        driver.quit();
+//    }
 }
