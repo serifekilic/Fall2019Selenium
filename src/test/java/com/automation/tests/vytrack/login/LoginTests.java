@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 //STATIC IMPORT OF ALL ASSERTIONS
 import static org.testng.Assert.*;
-public class LoginPageTests {
+public class LoginTests {
     /*
     /*
 html5 warning message attribute
@@ -29,14 +29,14 @@ you can just read it
     //https - data encrypted, no chance for hackers to retrieve info
     //http - data as a plain text, very easy to hack it
     private String URL = "https://qa2.vytrack.com/user/login";
-  //  CREDENTIALS FOR store manager
+    //    CREDENTIALS FOR store manager
     private String username = "storemanager85";
     private String password = "UserUser123";
-    private By usernameBy=By.id("prependedInput");
-    private By passwordBy=By.id("prependedInput2");
-    private By warningMessageBy=By.cssSelector("[class='alert alert-error']>div");
 
-
+    private By usernameBy = By.id("prependedInput");
+    private By passwordBy = By.id("prependedInput2");
+    // > in css selector means same thing as / in xpath - direct child
+    private By warningMessageBy = By.cssSelector("[class='alert alert-error'] > div");
 
     @Test(description = "Verify that warning message displays when user enters invalid username")
     public void invalidUsername(){
@@ -52,15 +52,17 @@ you can just read it
         assertEquals(actual, expected);
     }
 
-@Test(description = "Login as store manager and")
-public void loginAsStoreManager(){
-    driver.findElement(usernameBy).sendKeys(username,Keys.ENTER);
-    driver.findElement(passwordBy).sendKeys(password,Keys.ENTER);
-    BrowserUtils.wait(5);
-    String expected="Dashboard";
-    String actual=driver.getTitle();
-    assertEquals(actual,expected,"Page title is not correct!");
-}
+    @Test(description = "Login as store manager and verify that tile is equals to Dashboard")
+    public void loginAsStoreManager(){
+        driver.findElement(usernameBy).sendKeys(username);
+        driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
+        BrowserUtils.wait(5);
+
+        String expected = "Dashboard";
+        String actual = driver.getTitle();
+
+        assertEquals(actual, expected, "Page title is not correct!");
+    }
 
 
     @BeforeMethod
@@ -70,6 +72,7 @@ public void loginAsStoreManager(){
         driver.get(URL);
         driver.manage().window().maximize();
     }
+
     @AfterMethod
     public void teardown() {
         //if webdriver object alive
