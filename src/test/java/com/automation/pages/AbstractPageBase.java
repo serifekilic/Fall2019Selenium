@@ -6,7 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 /*
 /**
  * This class will be extended by page classes
@@ -17,12 +20,24 @@ import org.openqa.selenium.support.PageFactory;
  */
 //test classes will extend => TestBase
 //Page classes will extend=> PageBase
-
+//We come up with method that will wrap up locator not to have duplication
+// by using webElements directly in test class
 public abstract class AbstractPageBase {
     protected WebDriver driver = Driver.getDriver();
+    protected WebDriverWait wait=new WebDriverWait(driver,15);
+
+    @FindBy(css="#user-menu > a ")
+    protected WebElement currentUser;
+    //bu web elementin subclassta gozukmesini istiyoruz, o yuzden protected yaptik
 
     public AbstractPageBase() {
         PageFactory.initElements(driver, this);
+    }
+
+    public String getCurrentUserName(){
+        BrowserUtils.waitForPageToLoad(10);
+        wait.until(ExpectedConditions.visibilityOf(currentUser));
+        return currentUser.getText().trim();
     }
 
     /**

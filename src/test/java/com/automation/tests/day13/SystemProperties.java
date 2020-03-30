@@ -17,6 +17,7 @@ public class SystemProperties {
         //sorun cikmaz.
         //it represent our Selenium project
         System.out.println(System.getProperty( "os.name" ));
+        ////flexible path to downloads folder
         System.out.println(System.getProperty("user.home"));
         //for windows, use \\ instead of /
         // System.getProperty("user.home")+"/Downloads"
@@ -31,7 +32,7 @@ public class SystemProperties {
         //******interview Sorusu:   how to check that a file is downloaded in Selenium
 
         System.out.println(System.getProperty("os.arch"));
-        //
+        //        //https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
     }
 
 }

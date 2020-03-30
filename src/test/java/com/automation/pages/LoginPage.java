@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 /*
 so when you create a page class are you storing all the WebElement locators as variables,
-and then have basic navigation methods built in as well that you can call upon? (edited)
+and then have basic navigation methods built in as well that you can call upon?
  */
 public class LoginPage {
 
@@ -35,7 +35,8 @@ public class LoginPage {
         //to connect our webdriver, page class and page factory
         //PageFactory - used to use @FindBy annotations
         //PageFactory - helps to find elements easier
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(), this);//this refers to page class
+        //this yerine (LoginPage.class) diye de yazabiliriz
     }
 
     public String getWarningMessageText() {
@@ -64,6 +65,7 @@ public class LoginPage {
     public void login() {
         username.sendKeys(ConfigurationReader.getProperty("store_manager"));
         password.sendKeys(ConfigurationReader.getProperty("password"), Keys.ENTER);
+      //  BrowserUtils.waitForPageToLoad(10);//test fail olursa ekle
         BrowserUtils.wait(3);
     }
 }
