@@ -11,13 +11,14 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
 public class March17 {
 
-    public static void main(String[] args) throws InterruptedException {
-
+    @Test
+    public void fillingForm()throws Exception {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.manage().window().maximize();
         driver.get("http://qa3.vytrack.com");
@@ -39,13 +40,13 @@ public class March17 {
         create_contact.click();
         Thread.sleep(3000);
         String currentTitle = driver.getTitle();
-        if (currentTitle.equalsIgnoreCase("Create Contact - Contacts - Customers")){
+        if (currentTitle.equalsIgnoreCase("Create Contact - Contacts - Customers")) {
             System.out.println("Title is expected");
-        }else {
+        } else {
             System.out.println("Title is NOT expected");
         }
         //MEETING ID FOR TODAY CLASS: 949992072
-        HashMap <String, String> contact1 = new HashMap<>();
+        HashMap<String, String> contact1 = new HashMap<>();
         contact1.put("First Name", "John");
         contact1.put("Last Name", "Smith");
         contact1.put("Phone", "571-236-4545");
@@ -85,7 +86,7 @@ public class March17 {
         country_dropdwn.selectByValue(contact1.get("Country"));
         Select state_list = new Select(state);
         state_list.selectByValue("US-" + contact1.get("State"));
-        if (contact1.get("Sales Group").equalsIgnoreCase("true")){
+        if (contact1.get("Sales Group").equalsIgnoreCase("true")) {
             salesGroup.click();
         }
         driver.findElement(By.xpath("(//button[contains(text(), 'Save and Close')])[1]")).click();
@@ -108,3 +109,4 @@ public class March17 {
         driver.quit();
     }
 }
+

@@ -21,6 +21,7 @@ public class LoginPage {
 
     @FindBy(id = "prependedInput2")
     private WebElement password;
+    //WebElement password= driver.findElement(By.Id("prependedInput2"); yukaridaki  ununla ayni isi goruyor
 
     @FindBy(id = "_submit")
     private WebElement login;
@@ -37,6 +38,9 @@ public class LoginPage {
         //PageFactory - helps to find elements easier
         PageFactory.initElements(Driver.getDriver(), this);//this refers to page class
         //this yerine (LoginPage.class) diye de yazabiliriz
+        //hangi class ta FindBy kullanilacak onu tanimliyoruz, this ile. Pagefactory i hangi
+        // pageClass icin kullanirsak kullanalim hep "this" kullandigimiz icin bulundugu class i temsil edecek
+        //this is just for one page.
     }
 
     public String getWarningMessageText() {

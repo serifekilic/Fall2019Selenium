@@ -41,13 +41,17 @@ public class March25 {
 
     for(WebElement each: frameList){
         driver.switchTo().frame(each);
-        String bodyText=driver.findElement(By.tagName("body")).getText();
-        System.out.println("Body text: "+bodyText);
+        String bodyTextTop=driver.findElement(By.tagName("body")).getText();
+        System.out.println("Body text Top: "+bodyTextTop);
         driver.switchTo().parentFrame();// ucunu icine alan giant frame. bu frameden iki tane var.
         //bunlari icine alan bir de default frame var
     }
         driver.switchTo().defaultContent();
         driver.switchTo().frame("frame-bottom");
+        String bodyTextBottom=driver.findElement(By.xpath("//body")).getText();
+        System.out.println("bodyTextBottom = " + bodyTextBottom);
+
+        driver.switchTo().defaultContent();
     }
     @AfterMethod
     public void teardown(){

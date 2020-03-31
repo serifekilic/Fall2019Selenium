@@ -9,9 +9,10 @@ import org.testng.annotations.Test;
 public class NewLoginTests extends AbstractTestBase {
 //testBase e extend yaptik, o yuzden beforeMethod ve Aftermethod kullanmamiza gerek yok
 
+
     @Test
     public void verifyPageTitle(){
-        LoginPage loginPage = new LoginPage();
+         LoginPage loginPage = new LoginPage();
         loginPage.login();
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
     }
@@ -23,7 +24,7 @@ public class NewLoginTests extends AbstractTestBase {
 
     @Test
     public void verifyWarningMessage(){
-        LoginPage loginPage = new LoginPage();
+         LoginPage loginPage = new LoginPage();
         loginPage.login("wrong", "wrong");
         Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
     }

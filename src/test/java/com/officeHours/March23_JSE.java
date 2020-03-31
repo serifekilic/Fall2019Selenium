@@ -72,4 +72,7 @@ public class March23_JSE {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.getElementById('email-list-signup-email-input').scrollIntoView();");
     }
+
+
+
     }
