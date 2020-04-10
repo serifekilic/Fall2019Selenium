@@ -16,6 +16,7 @@ import java.util.Random;
 public class March30_HW_Days_Friday {
 
     private WebDriver driver = Driver.getDriver();
+
     @Test
     public void test() {
         driver.get("http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCheckBox");
@@ -39,3 +40,5 @@ public class March30_HW_Days_Friday {
         driver.quit();
     }
 }
+
+

@@ -32,7 +32,7 @@ public class WebTables {
         //biz sayfaya gidildigini gormeyiz. digerine gore daha hizlidir.
 
 
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setHeadless(true);
         driver = new ChromeDriver(chromeOptions);
