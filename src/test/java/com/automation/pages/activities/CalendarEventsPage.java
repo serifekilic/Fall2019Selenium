@@ -49,11 +49,6 @@ public class CalendarEventsPage extends AbstractPageBase {
         descriptionTextArea.sendKeys(description);
         driver.switchTo().defaultContent();//exit from the frame
     }
-
-
-
-
-
     public void clickOnSaveAndClose(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", saveAndClose);
@@ -67,9 +62,6 @@ public class CalendarEventsPage extends AbstractPageBase {
         BrowserUtils.waitForPageToLoad(20);
         return generalInfoTitle.getText();
     }
-
-
-
     public String getGeneralInfoDescriptionText() {
         BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Description']/following-sibling::div//div")));

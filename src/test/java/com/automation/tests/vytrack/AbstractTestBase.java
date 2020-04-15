@@ -3,6 +3,7 @@ package com.automation.tests.vytrack;
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.ConfigurationReader;
 import com.automation.utilities.Driver;
+import com.automation.utilities.ExcelUtil;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
@@ -38,6 +39,8 @@ public abstract class AbstractTestBase {
     protected static ExtentHtmlReporter htmlReporter;
 
     protected static ExtentTest test;
+    protected static int row = 1;
+    protected ExcelUtil excelUtil;
 
     //@Optional - to make parameter optional
     //if you don't specify it, testng will require to specify this parameter for every test, in xml runner
@@ -90,6 +93,11 @@ public abstract class AbstractTestBase {
             BrowserUtils.wait(2);
             test.addScreenCaptureFromPath(screenshotPath, "Failed");//attach screenshot
             test.fail(iTestResult.getThrowable());//attach console output
+            //if excelUtil object was created
+            //set value if result column to failed
+            if(excelUtil!=null){
+                excelUtil.setCellData("FAILED","result",row++);
+            }
         }
         BrowserUtils.wait(2);
         Driver.closeDriver();
